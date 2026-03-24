@@ -51,7 +51,7 @@ function NumberField({
 }: NumberFieldProps) {
   return (
     <label className="block space-y-2">
-      <span className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+      <span className="text-xs uppercase tracking-widest text-[#ff7a00]">
         {label} {optional ? "(Optional)" : ""}
       </span>
       <input
@@ -60,7 +60,7 @@ function NumberField({
         onChange={(event) => onChange(event.target.value)}
         step={step}
         min={min}
-        className="w-full rounded-lg border border-zinc-700 bg-[#0a0a0c] px-3 py-2 text-sm text-white outline-none transition focus:border-[#00ff88]"
+        className="w-full rounded-lg border border-[#2a2a2a] bg-[#1a1a1a] px-3 py-2 font-mono text-sm text-[#ffffff] outline-none transition focus:border-[#ff7a00] focus:ring-2 focus:ring-[#ff7a00]/30"
       />
     </label>
   );
@@ -87,20 +87,22 @@ export function InputPanel(props: InputPanelProps) {
   } = props;
 
   return (
-    <section className="rounded-2xl border border-zinc-800 bg-[#16161a] p-4 shadow-[0_0_20px_rgba(0,0,0,0.35)] md:p-6">
+    <section className="rounded-2xl border border-[#2a2a2a] bg-[#141414] p-4 shadow-[0_0_20px_rgba(0,0,0,0.35)] md:p-6">
       <header className="mb-6">
-        <h2 className="text-lg font-semibold text-white">Input Command Center</h2>
-        <p className="mt-1 text-sm text-zinc-400">Live calculations update on every keystroke.</p>
+        <h2 className="text-lg font-semibold text-[#ffffff]">Input Command Center</h2>
+        <p className="mt-1 text-sm text-[#888888]">
+          Live calculations update on every keystroke.
+        </p>
       </header>
 
-      <div className="mb-6 flex rounded-xl border border-zinc-700 bg-[#0a0a0c] p-1">
+      <div className="mb-6 flex rounded-xl border border-[#2a2a2a] bg-[#1a1a1a] p-1">
         <button
           type="button"
           onClick={() => onModeChange("CALCULATOR")}
           className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition ${
             mode === "CALCULATOR"
-              ? "bg-zinc-200 text-zinc-900"
-              : "text-zinc-300 hover:text-white"
+              ? "bg-[#ff7a00] text-[#0a0a0a]"
+              : "bg-[#1a1a1a] text-[#888888] hover:text-[#ffffff]"
           }`}
         >
           Standard Calculator
@@ -110,8 +112,8 @@ export function InputPanel(props: InputPanelProps) {
           onClick={() => onModeChange("RISK_SIZING")}
           className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition ${
             mode === "RISK_SIZING"
-              ? "bg-[#00ff88] text-[#0a0a0c]"
-              : "text-zinc-300 hover:text-white"
+              ? "bg-[#ff7a00] text-[#0a0a0a]"
+              : "bg-[#1a1a1a] text-[#888888] hover:text-[#ffffff]"
           }`}
         >
           Risk-Based Sizing (Pro)
@@ -124,8 +126,8 @@ export function InputPanel(props: InputPanelProps) {
           onClick={() => onDirectionChange("LONG")}
           className={`rounded-xl border px-4 py-4 text-lg font-bold transition ${
             direction === "LONG"
-              ? "border-[#00ff88] bg-[#00ff88] text-[#0a0a0c]"
-              : "border-zinc-700 bg-[#0a0a0c] text-zinc-300 hover:border-[#00ff88]/60"
+              ? "border-[#ff7a00] bg-[#ff7a00] text-[#0a0a0a]"
+              : "border-[#2a2a2a] bg-[#1a1a1a] text-[#888888] hover:border-[#ff7a00]/60"
           }`}
         >
           LONG
@@ -135,8 +137,8 @@ export function InputPanel(props: InputPanelProps) {
           onClick={() => onDirectionChange("SHORT")}
           className={`rounded-xl border px-4 py-4 text-lg font-bold transition ${
             direction === "SHORT"
-              ? "border-[#ff2a2a] bg-[#ff2a2a] text-white"
-              : "border-zinc-700 bg-[#0a0a0c] text-zinc-300 hover:border-[#ff2a2a]/60"
+              ? "border-[#ef4444] bg-[#ef4444] text-white"
+              : "border-[#2a2a2a] bg-[#1a1a1a] text-[#888888] hover:border-[#ef4444]/60"
           }`}
         >
           SHORT
@@ -163,7 +165,9 @@ export function InputPanel(props: InputPanelProps) {
         )}
 
         <label className="block space-y-2">
-          <span className="text-xs uppercase tracking-[0.2em] text-zinc-400">Leverage</span>
+          <span className="text-xs uppercase tracking-widest text-[#ff7a00]">
+            Leverage
+          </span>
           <div className="grid grid-cols-[1fr_110px] gap-3">
             <input
               type="range"
@@ -172,7 +176,7 @@ export function InputPanel(props: InputPanelProps) {
               step={1}
               value={leverage}
               onChange={(event) => onLeverageChange(parseNumeric(event.target.value))}
-              className="w-full accent-[#00ff88]"
+              className="w-full accent-[#ff7a00]"
             />
             <input
               type="number"
@@ -181,7 +185,7 @@ export function InputPanel(props: InputPanelProps) {
               step={1}
               value={leverage}
               onChange={(event) => onLeverageChange(parseNumeric(event.target.value))}
-              className="w-full rounded-lg border border-zinc-700 bg-[#0a0a0c] px-3 py-2 text-sm text-white outline-none transition focus:border-[#00ff88]"
+              className="w-full rounded-lg border border-[#2a2a2a] bg-[#1a1a1a] px-3 py-2 font-mono text-sm text-[#ffffff] outline-none transition focus:border-[#ff7a00] focus:ring-2 focus:ring-[#ff7a00]/30"
             />
           </div>
         </label>

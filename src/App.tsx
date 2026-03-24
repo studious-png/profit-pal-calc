@@ -48,15 +48,15 @@ export default function App() {
   ]);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0c] px-4 py-6 text-white md:px-6 lg:px-10">
+    <main className="min-h-screen bg-[#0a0a0a] px-4 py-6 font-['Inter',sans-serif] text-[#ffffff] md:px-6 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <header className="mb-6">
-          <h1 className="text-3xl font-black tracking-tight text-white md:text-4xl">
-            The Liquidation Matrix
-          </h1>
-          <p className="mt-2 text-sm text-zinc-400">
-            Hyper-fast liquidation and risk-based sizing engine for leverage trading.
-          </p>
+          <div>
+            <p className="text-xs uppercase tracking-widest text-[#ff7a00]">Powered by Crypto Goats</p>
+            <h1 className="mt-2 text-3xl font-black tracking-tight text-[#ffffff] md:text-4xl">
+              Position Calculator
+            </h1>
+          </div>
         </header>
 
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
